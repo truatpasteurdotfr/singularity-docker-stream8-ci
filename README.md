@@ -11,13 +11,14 @@ Tru <tru@pasteur.fr>
 - `:main` tagged docker image
 - `:latest` tagged singularity image
 
-## Usage
-- Docker [![Docker build](https://github.com/truatpasteurdotfr/singularity-docker-stream8-ci/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/truatpasteurdotfr/singularity-docker-stream8-ci/actions/workflows/docker-publish.yml)
+## Usage [![Docker and Singularity build](https://github.com/truatpasteurdotfr/singularity-docker-stream8-ci/actions/workflows/docker-singularity-publish.yml/badge.svg)](https://github.com/truatpasteurdotfr/singularity-docker-stream8-ci/actions/workflows/docker-singularity-publish.yml)
+
+- Docker 
 ```
 docker pull ghcr.io/truatpasteurdotfr/singularity-docker-stream8-ci:main
 ```
 
-- Singularity [![Singularity build](https://github.com/truatpasteurdotfr/singularity-docker-stream8-ci/actions/workflows/singularity-publish.yml/badge.svg)](https://github.com/truatpasteurdotfr/singularity-docker-stream8-ci/actions/workflows/singularity-publish.yml)
+- Singularity 
 ```
 singularity run oras://ghcr.io/truatpasteurdotfr/singularity-docker-stream8-ci:latest
 ```

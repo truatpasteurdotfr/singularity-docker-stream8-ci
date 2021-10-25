@@ -119,7 +119,11 @@ jobs:
          ls 
          if [ -f "${{ matrix.recipe }}" ]; then
             singularity build container.sif ${{ matrix.recipe }}
+            tag=latest
          fi
+         # Build the container and name by tag
+         echo "Tag is $tag."
+         echo "tag=$tag" >> $GITHUB_ENV
 
       - name: Login and Deploy Container
         if: (github.event_name != 'pull_request')
@@ -128,6 +132,5 @@ jobs:
         run: |         
             if [[ "${keepgoing}" == "true" ]]; then
                 echo ${{ secrets.GITHUB_TOKEN }} | singularity remote login -u ${{ secrets.GHCR_USERNAME }} --password-stdin oras://ghcr.io
-                tag=latest
                 singularity push container.sif oras://ghcr.io/${GITHUB_REPOSITORY}:${tag}
             fi
